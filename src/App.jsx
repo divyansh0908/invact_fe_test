@@ -7,11 +7,13 @@ import HomePage from './pages/HomePage'
 function App() {
 
   return (
+    <div className=' w-full h-full'>
     <ParticipantListProvider>
-      <div className='w-full'>
+      
       <HomePage />
-      </div>
+     
     </ParticipantListProvider>
+    </div>
   )
 }
 

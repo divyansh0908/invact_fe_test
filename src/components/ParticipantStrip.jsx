@@ -3,7 +3,7 @@ import { useParticipant } from "../context/participantList";
 
 
 
-const CardWithLogo = ({name, imgSrc, mic}) =>{
+const ParticipantStrip = ({name, imgSrc, mic}) =>{
     const {participantList,setParticipantList} = useParticipant();
     const turnMicOff =() =>{
         // 
@@ -29,19 +29,21 @@ const CardWithLogo = ({name, imgSrc, mic}) =>{
     }
 
     return(
-        <div className="bg-gray-300 min-w-[350px] h-[200px] min-h-[200px] rounded-md mx-4" onClick={()=>turnMicOff()}>
-            <div className="flex flex-col justify-center h-full">
-                <div className="flex flex-row-reverse px-[10px]">
-                    {mic ? "On": "Off"}
+        <div className=" w-full p-4 rounded-md mx-auto" onClick={()=>turnMicOff()}>
+            <div className="flex flex-row py-4 ">
+            <div className="my-auto mx-4">
+                    <img src={imgSrc} alt="user Image" className="w-[30px] h-[30px] rounded-full"/>
                 </div>
-
-                <div className="mx-auto justify-self-center w-[60px] h-[60px]">
-                    <img src={imgSrc} alt="user Image" className="rounded-full"/>
-                </div>
-                <div className="flex flex-row font-semibold px-[10px]">
+                <div className="flex flex-row font-semibold px-[10px] my-auto">
                     {name}
                 </div>
 
+                <div className="flex flex-row-reverse my-auto px-[10px]">
+                    {mic ? "On": "Off"}
+                </div>
+
+                
+               
             </div>
         </div>
     )
@@ -49,4 +51,4 @@ const CardWithLogo = ({name, imgSrc, mic}) =>{
 
 }
 
-export default CardWithLogo;
+export default ParticipantStrip;

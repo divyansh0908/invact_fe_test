@@ -7,7 +7,7 @@ const AllCards = ()=>{
     const {participantList} = useParticipant();
 
     return (
-        <div className="w-2/3 bg-red-300">
+        <div className="w-full flex flex-wrap">
         {participantList.map((participant)=><CardWithLogo name={participant.name} imgSrc={participant.imgSrc} mic={participant.micMute} />)}
         </div>
     )
